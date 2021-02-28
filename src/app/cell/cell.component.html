@@ -1,0 +1,11 @@
+<div 
+class="cell" 
+[class.start]="cell.state === stateStart"
+[class.end]="cell.state === stateEnd"
+[class.wall]="cell.state === stateWall"
+[class.path]="cell.state === statePath"
+[class.consider]="cell.state === stateConsider"
+(mousedown)="mouseDown()"
+(mouseenter)="mouseEnter()"
+>
+</div>

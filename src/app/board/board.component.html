@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="board" 
+    (mouseleave)="mouseLeave()"
+    (mouseup)="mouseUp()"
+    >
+    <ng-container *ngFor="let row of board;let ri = index;">
+        <ng-container *ngFor="let col of row;let ci = index;">
+            <app-cell  [cell]="board[ri][ci]" (oMouseDown)="cellDown($event)" (oMouseEnter)="cellEnter($event)"></app-cell>
+        </ng-container>
+    </ng-container>
+        
+    </div>
+    <div class="buttons-container">
+        <button pButton pRipple type="button" label="Set Start" (click)="setCurrentState(stateStart)"></button>
+        <button pButton pRipple type="button" label="Set End" (click)="setCurrentState(stateEnd)"></button>
+        <button pButton pRipple type="button" label="Set Walls" (click)="setCurrentState(stateWall)"></button>
+        <button pButton pRipple type="button" label="Begin" class="p-button-success begin-button" (click)="begin()"></button>
+        <button pButton pRipple type="button" label="Reset" class="p-button-danger reset-button" (click)="reset()"></button>
+        <div class="log-list">
+            <span *ngFor="let log of log">{{log}}</span>
+        </div>
+    </div>
+    <!--<div class="reset-container" [ngClass]="{'hide': isResetting == true}">        
+        <p-progressSpinner class="reset-spinner" strokeWidth="8" ></p-progressSpinner>
+    </div>-->
+</div>
+

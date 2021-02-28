@@ -1,0 +1,49 @@
+.container{
+    display: flex;
+    position: relative;
+}
+
+.board{
+    background-color: rgb(219, 212, 212);
+    display: inline-grid;  
+    grid-template-columns: repeat(70, 20px);
+    grid-auto-rows: 20px; 
+    margin-right: 10px;   
+}
+
+.buttons-container{
+    padding: 10px;
+    flex-grow: 1;
+    display: inline-grid; 
+    grid-template-columns: auto auto auto; 
+    grid-template-rows: 40px 40px 1fr;
+    column-gap: 8px;
+    row-gap: 8px;
+    max-height: 800px;
+}
+
+.begin-button{
+    grid-column-start: 2/1;
+}
+
+.reset-button{
+    grid-column-start: 3;
+}
+
+.log-list{
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    overflow: auto;
+}
+
+.reset-container{
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
